@@ -31,7 +31,7 @@ class Upload{
 		
 		$duplicates = $this->duplicates > 0 ? '-'.$this->duplicates : '';
 		
-		return $this->name.$duplicates.$extension;
+		return str_replace(" ","-",$this->name.$duplicates.$extension);
 	}
 	
 	private function getPossibleBasename(string $dir, bool $overwrite) {
